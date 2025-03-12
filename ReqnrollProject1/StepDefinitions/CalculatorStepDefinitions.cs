@@ -2,6 +2,7 @@ using Allure.Net.Commons;
 using NUnit.Framework;
 using Reqnroll;
 using ReqnrollProject1.Models;
+using System;
 
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -52,11 +53,16 @@ namespace ReqnrollProject1.StepDefinitions
         [Given("I get list of users")]
         public void GivenGetUsrList(DataTable dataTable)
         {
-            List<User> users = dataTable.CreateSet<User>().ToList();
+            AllureApi.Step("Getting all users", () =>
+            {
+                List<User> users = dataTable.CreateSet<User>().ToList();
 
-            foreach (User user in users) { 
-                Console.WriteLine(user.FirstName);
-            }
+                foreach (User user in users)
+                {
+                    Console.WriteLine(user.FirstName);
+                }
+            });
+            
         }
 
         [When("the two numbers are added")]
