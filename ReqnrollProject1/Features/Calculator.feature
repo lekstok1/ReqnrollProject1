@@ -5,6 +5,7 @@ Simple calculator for adding two numbers
 
 @allure.owner:JohnDoe
 @allure.story:AddNumbers
+@allure.issue:AQQ-111
 @mytag
 Scenario Outline: Add two numbers
 

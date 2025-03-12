@@ -27,6 +27,12 @@ namespace ReqnrollProject1.StepDefinitions
         [Given("the first number is {int}")]
         public void GivenTheFirstNumberIs(int number)
         {
+            AllureLifecycle.Instance.UpdateTestCase(tc =>
+            {
+                tc.parameters.Add(new Parameter { name = "Browser", value = "Chrome 120" });
+                tc.parameters.Add(new Parameter { name = "OS", value = "Windows 11" });
+            });
+
             AllureApi.Step($"Getting first number {number}");
             _scenarioContext["firstNumber"] = number;
         }
