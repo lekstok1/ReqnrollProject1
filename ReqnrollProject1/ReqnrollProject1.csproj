@@ -19,4 +19,10 @@
     <Folder Include="Support\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="download.jfif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

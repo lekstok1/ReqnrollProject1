@@ -3,6 +3,7 @@ Feature: New
 
 Simple calculator for adding two numbers
 
+@allure.owner:JohnDoe
 @mytag
 Scenario Outline: New two numbers
 
@@ -17,6 +18,7 @@ Scenario Outline: New two numbers
 	| 50          | 70           | 120    |	
 	| 0          | -70           | -70    |
 
+@allure.owner:JohnDoe
 @mytag1
 Scenario: New Users
 

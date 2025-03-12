@@ -1,3 +1,4 @@
+using Allure.Net.Commons;
 using NUnit.Framework;
 using Reqnroll;
 using ReqnrollProject1.Models;
@@ -25,12 +26,14 @@ namespace ReqnrollProject1.StepDefinitions
         [Given("the first number is {int}")]
         public void GivenTheFirstNumberIs(int number)
         {
+            AllureApi.Step($"Getting first number {number}");
             _scenarioContext["firstNumber"] = number;
         }
 
         [Given("the second number is {int}")]
         public void GivenTheSecondNumberIs(int number)
         {
+            AllureApi.Step($"Getting second number {number}");
             _scenarioContext["secondNumber"] = number;
         }
 
@@ -59,6 +62,11 @@ namespace ReqnrollProject1.StepDefinitions
         [When("the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
+            AllureApi.AddAttachment(
+           "download.jfif",
+           "image/jpeg",
+           File.ReadAllBytes("download.jfif")
+       );
             int firstNumber = _scenarioContext.Get<int>("firstNumber");
             int secondNumber = _scenarioContext.Get<int>("secondNumber");
             _scenarioContext["result"] = firstNumber + secondNumber;

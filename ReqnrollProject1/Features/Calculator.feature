@@ -3,6 +3,8 @@ Feature: Calculator
 
 Simple calculator for adding two numbers
 
+@allure.owner:JohnDoe
+@allure.story:AddNumbers
 @mytag
 Scenario Outline: Add two numbers
 
@@ -18,6 +20,7 @@ Scenario Outline: Add two numbers
 	| 50          | 70           | 120    |	
 	| 0          | -70           | -70    |
 
+@allure.owner:JohnDoe
 @mytag1
 Scenario: Check Users
 
